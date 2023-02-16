@@ -45,7 +45,7 @@
                         <span>Clothes:</span>
                         <input id="clouthsInput" type="text" class="input input-bordered" />
                     </label>
-                    <button id="calculateBtn" class="w-28 py-3 text-lg text-gray-100 rounded-xl bg-blue-500">Calculate</button>
+                    <label id="calculateBtn" class="text-center w-28 py-3 text-lg text-gray-100 rounded-xl bg-blue-500">Calculate</label>
                     <h2 class="text-2xl font-bold">Total Expenses: <span id="totalExpenses"></span></h2>
                     <h2 class="text-2xl font-bold">Balance: <span id="balance"></span></h2>
                     <div class="flex gap-8 items-center">
@@ -54,13 +54,34 @@
                             <input id="saveInput" type="text" class="bg-gray-700 border-gray-600 outline-none rounded-tr-2xl rounded-br-2xl px-3" />
                         </label>
                         <h2 class="text-xl font-bold">%</h2>
-                        <button id="saveBtn" class="w-28 py-3 text-lg text-gray-100 rounded-xl bg-blue-500">Save</button>
+                        <label id="saveBtn" class="w-28 text-center py-3 text-lg text-gray-100 rounded-xl bg-blue-500">Save</label>
                     </div>
                     <h2 class="text-2xl font-bold">Saving Amount: <span id="savingAmount"></span></h2>
                     <h2 class="text-2xl font-bold">Remaining Balance: <span id="remainingBalance"></span></h2>
             </div>
         </section>
     </main>
+
+    <!-- The button to open modal -->
+<!-- <label for="my-modal-3"  class="btn">open modal</label> -->
+
+    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box relative">
+        <label id="closeBtn1" for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+        <h3 class="text-lg font-bold">Sorry!</h3>
+        <p class="py-4">Your expenses are more than your income so give correct input</p>
+      </div>
+    </div>
+
+    <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+    <div class="modal">
+      <div class="modal-box relative">
+        <label id="closeBtn2" for="my-modal-4" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+        <h3 class="text-lg font-bold">Sorry!</h3>
+        <p class="py-4">Your percentage of saving is more than your balance amount Please give correct percentage</p>
+      </div>
+    </div>
 
     <script src="js/utilities.js"></script>
     <script src="js/index.js"></script>

@@ -9,11 +9,20 @@ document.getElementById("calculateBtn").addEventListener("click", function(){
     
     
     if (parseFloat(incomeInput) < parseFloat(foodInput) || parseFloat(incomeInput) < parseFloat(rentInput) || parseFloat(incomeInput) < parseFloat(clouthsInput) || parseFloat(incomeInput) < totalExpenses){
-        alert(`Your Income is ${incomeInput} and Your Expenses is ${totalExpenses} So Input Lower Expenses`);
-        return;
+        const calculateBtn = document.getElementById("calculateBtn");
+        calculateBtn.setAttribute("for", "my-modal-3");
+        return;  
     }
+
+    if(incomeInput < 0){
+        const calculateBtn = document.getElementById("calculateBtn");
+        calculateBtn.setAttribute("for", "my-modal-3");
+        return; 
+    }
+
     if (isNaN(incomeInput) || isNaN(foodInput) || isNaN(rentInput) ||  isNaN(clouthsInput)){
-        alert("Please enter valid input value");    
+        const calculateBtn = document.getElementById("calculateBtn");
+        calculateBtn.setAttribute("for", "my-modal-3");
         return;
     }
     
@@ -34,7 +43,8 @@ document.getElementById("saveBtn").addEventListener("click", function(){
     const savingAmount = (saveInput/100) * parseFloat(incomeInput);
 
     if(balanceNumber < savingAmount) {
-        alert(`Your don't save higher than balance please inter again low save amount`)
+        const saveBtn = document.getElementById("saveBtn");
+        saveBtn.setAttribute("for", "my-modal-4");
         return;
     }
 
@@ -44,4 +54,14 @@ document.getElementById("saveBtn").addEventListener("click", function(){
     const remainingBalance = balanceNumber - savingAmount;
     const showRemainingBalance = document.getElementById("remainingBalance")
     showRemainingBalance.innerText = remainingBalance;
+});
+
+
+document.getElementById("closeBtn1").addEventListener("click", function() {
+    const calculateBtn = document.getElementById("calculateBtn");
+    calculateBtn.removeAttribute("for", true);
+})
+document.getElementById("closeBtn2").addEventListener("click", function() {
+    const saveBtn = document.getElementById("saveBtn");
+    saveBtn.removeAttribute("for", true);
 })
